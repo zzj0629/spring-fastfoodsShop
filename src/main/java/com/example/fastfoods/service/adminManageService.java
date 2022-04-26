@@ -16,4 +16,7 @@ int updateAdminById (user user);
 
 //添加管理员
 int addAdmin(user user);
+
+//删除管理员
+int deleteAdminById(int id);
 }

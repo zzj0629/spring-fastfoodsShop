@@ -26,4 +26,9 @@ public class adminManageServiceImpl implements adminManageService {
     public int addAdmin(user user) {
         return adminManageMapper.addAdmin(user);
     }
+
+    @Override
+    public int deleteAdminById(int id) {
+        return adminManageMapper.deleteAdminById(id);
+    }
 }

@@ -33,5 +33,9 @@ public interface adminManageMapper {
         "VALUES (0,#{username},#{password},#{email},#{gender},1,#{activatecode},#{createtime})")
 int addAdmin(user user);
 
+//删除管理员
+    @Delete("DELETE FROM f_user WHERE id=#{id} and role=0;")
+int deleteAdminById(int id);
+
 
 }

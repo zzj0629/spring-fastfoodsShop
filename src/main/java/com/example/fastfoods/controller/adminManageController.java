@@ -73,6 +73,10 @@ public class adminManageController {
         return adminManageService.addAdmin(user);
     }
 
+//删除管理员
 
-
+    @PostMapping(value = "deleteAdminById")
+    public int deleteAdminById(int id) {
+        return adminManageService.deleteAdminById(id);
+    }
 }
