@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface userMapper {
     //登录
-    @Select("SELECT * FROM f_user WHERE username = #{username} and role=#{role}")
+    @Select("SELECT * FROM f_user WHERE username = #{username} and password = #{password} and role=#{role}")
     user selectUserByUsername(@Param("username")String username, @Param("role") int role);
 
     //注册
