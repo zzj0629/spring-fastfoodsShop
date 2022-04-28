@@ -24,7 +24,7 @@ public class cateGoryServiceImpl implements cateGoryService {
         return cateGoryMapper.selectAllGoodsType();
     }
 
-    //    删除分类
+    //删除分类
     @Override
     public int deleteGoodsTypeById(int id) {
         return cateGoryMapper.deleteGoodsTypeById(id);

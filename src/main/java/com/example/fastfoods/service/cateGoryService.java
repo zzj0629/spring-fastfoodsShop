@@ -8,7 +8,7 @@ public interface cateGoryService {
     //添加分类
     int addtype(GoodsType goodsType);
 
-    //    查看分类
+    //查看分类
     List<GoodsType> selectAllGoodsType();
 
     //删除分类

@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 @Repository
 public interface commodityMapper {
-    //    查看商品分类
+    //查看商品分类
     @Select("select * from f_goods")
     List<goods> selectAllGoods();
 
@@ -23,12 +23,12 @@ public interface commodityMapper {
     @Delete("DELETE FROM f_goods WHERE id=#{id}")
     int deleteGoodsTypeById(int id);
 
-    //    修改商品
+    //修改商品
     @Update("UPDATE f_goods SET name=#{name},price=#{price},pubdate=#{pubdate},typeName=#{typeName}," +
             "intro=#{intro},picture=#{picture},star=#{star}  WHERE id = #{id}")
     int updateGoods(goods goods);
 
-    //    条件查询商品
-    @Select("select * from f_goods where  typeName like concat(#{typeName},'%') and pubdate=#{pubdate} ")
-    List<goods> selectGoods(@Param("typeName") String typeName, @Param("pubdate") String pubdate);
+    //条件查询商品
+    @Select("select * from f_goods where  name like concat('%',#{name},'%') and pubdate  like concat('%',#{pubdate},'%') ")
+    List<goods> selectGoods(@Param("name") String name, @Param("pubdate") String pubdate);
 }

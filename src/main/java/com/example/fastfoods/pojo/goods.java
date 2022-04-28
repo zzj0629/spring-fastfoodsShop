@@ -1,5 +1,7 @@
 package com.example.fastfoods.pojo;
 
+import java.util.Date;
+
 public class goods {
     private int id;
     private String name;
@@ -35,13 +37,9 @@ public class goods {
         this.price = price;
     }
 
-    public String getPubdate() {
-        return pubdate;
-    }
+    public String getPubdate() { return pubdate; }
 
-    public void setPubdate(String pubdate) {
-        this.pubdate = pubdate;
-    }
+    public void setPubdate(String pubdate) { this.pubdate = pubdate;}
 
     public String getTypeName() {
         return typeName;

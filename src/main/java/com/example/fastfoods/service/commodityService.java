@@ -6,9 +6,10 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface commodityService {
+    //查看商品信息
     List<goods> selectAllGoods();
 
-    //    添加商品
+    //添加商品
     int addGoods(goods goods);
 
     //删除商品
@@ -18,5 +19,5 @@ public interface commodityService {
     int updateGoods(goods goods);
 
     //条件查询商品
-    List<goods> selectGoods(@Param("typeName") String typeName, @Param("pubdate") String pubdate);
+    List<goods> selectGoods(@Param("name") String name, @Param("pubdate") String pubdate);
 }

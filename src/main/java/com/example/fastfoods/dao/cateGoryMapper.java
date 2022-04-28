@@ -18,15 +18,15 @@ public interface cateGoryMapper {
             "VALUES (#{name},1,1)")
     int addtype(GoodsType goodsType);
 
-    //    查看商品分类
+    //查看商品分类
     @Select("select * from f_goodstype")
     List<GoodsType> selectAllGoodsType();
 
-    //    删除商品分类
+    //删除商品分类
     @Delete("DELETE FROM f_goodstype WHERE id=#{id}")
     int deleteGoodsTypeById(int id);
 
-    //    条件查询分类
-    @Select("select * from f_goodstype where name like concat(#{name},'%')")
+    //条件查询分类
+    @Select("select * from f_goodstype where name like concat('%',#{name},'%')")
     List<GoodsType> selectGoodsType(String name);
 }

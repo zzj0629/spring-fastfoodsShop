@@ -13,9 +13,9 @@ import java.util.List;
 @Repository
 public interface userMapper {
     //登录
-    @Select("SELECT * FROM f_user WHERE username = #{username} and password = #{password} and role=#{role}")
+    @Select("SELECT * FROM f_user WHERE username = #{username} and role=#{role}")
     user selectUserByUsername(@Param("username")String username, @Param("role") int role);
-
+//    and password = #{password}
     //注册
     @Insert("INSERT INTO f_user (role,username,password,email,gender,flag,activatecode,createtime)" +
             "VALUES (1,#{username},#{password},#{email},#{gender},1,#{activatecode},#{createtime})")

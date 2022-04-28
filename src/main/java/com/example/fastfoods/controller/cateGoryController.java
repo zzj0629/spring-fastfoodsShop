@@ -14,6 +14,7 @@ public class cateGoryController {
     @Autowired
     cateGoryService cateGoryService;
 
+    //添加商品分类
     @PostMapping(value = "addtype")
     int addtype(@Param("name") String name) {
         GoodsType goodsType = new GoodsType();
@@ -21,19 +22,19 @@ public class cateGoryController {
         return cateGoryService.addtype(goodsType);
     }
 
-    //    查看分类
+    //查看分类
     @PostMapping(value = "selectCategory")
     List<GoodsType> selectCategory() {
         return cateGoryService.selectAllGoodsType();
     }
 
-    //    删除分类
+    //删除分类
     @PostMapping(value = "deleteCategoryById")
     int deleteCategoryById(int id) {
         return cateGoryService.deleteGoodsTypeById(id);
     }
 
-    //    selectAdminByName
+    //selectAdminByName
     @PostMapping(value = "selectAdminByName")
     List<GoodsType> selectAdminByName(String name) {
         return cateGoryService.selectGoodsType(name);
