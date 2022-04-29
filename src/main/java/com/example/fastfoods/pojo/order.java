@@ -1,5 +1,7 @@
 package com.example.fastfoods.pojo;
 
+import java.util.List;
+
 public class order {
     private String id;
     private int uid;

@@ -24,18 +24,16 @@ public interface adminManageMapper {
             "</script>")
     List<user>  selectAdminWhereCondition(@Param("username")String username, @Param("gender")String gender);
 
-//    修改管理员
+    //修改管理员
     @Update("UPDATE  f_user set username=#{username},password=#{password},email=#{email},gender=#{gender} where id=#{id} and role=0")
     int updateAdminById (user user);
 
-//    添加管理员
-@Insert("INSERT INTO f_user (role,username,password,email,gender,flag,activatecode,createtime)" +
-        "VALUES (0,#{username},#{password},#{email},#{gender},1,#{activatecode},#{createtime})")
-int addAdmin(user user);
+    //添加管理员
+    @Insert("INSERT INTO f_user (role,username,password,email,gender,flag,activatecode,createtime)" +
+            "VALUES (0,#{username},#{password},#{email},#{gender},1,#{activatecode},#{createtime})")
+    int addAdmin(user user);
 
-//删除管理员
+    //删除管理员
     @Delete("DELETE FROM f_user WHERE id=#{id} and role=0;")
-int deleteAdminById(int id);
-
-
+    int deleteAdminById(int id);
 }
