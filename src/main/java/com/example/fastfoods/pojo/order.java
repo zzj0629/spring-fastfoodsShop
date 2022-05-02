@@ -11,6 +11,9 @@ public class order {
     private int flag;
     private String username;
     private String address;
+    private String oid;
+    private int gid;
+    private int num;
 
     public String getId() {
         return id;
@@ -74,5 +77,29 @@ public class order {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getOid() {
+        return oid;
+    }
+
+    public void setOid(String oid) {
+        this.oid = oid;
+    }
+
+    public int getGid() {
+        return gid;
+    }
+
+    public void setGid(int gid) {
+        this.gid = gid;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 }
