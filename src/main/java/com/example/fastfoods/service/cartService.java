@@ -24,7 +24,7 @@ public interface cartService {
     //修改商品数量和小计
     int updateNumAndMoney(cart cart);
     //求商品总金额
-    int zongJinE(int cid);
+    double zongJinE(int cid);
     //按商品id删除商品
     int deleteSP(cartandgoods cartandgoods);
     //清空购物车

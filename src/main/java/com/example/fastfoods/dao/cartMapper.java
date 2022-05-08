@@ -17,7 +17,7 @@ public interface cartMapper {
     //用户登录后为用户创建一个购物车
     @Insert("insert into f_cart(uid,money) values(#{uid},0)")
     int addNewUserCart(cart cart);
-    //查询购物车中是否有商品
+    //查询购物车中是否有同类商品
     @Select("select * from f_cartdetail where cid=#{cid}")
     List<cart> seegid(int cid);
     //如果购物车有该商品 则商品数量加1
@@ -37,7 +37,7 @@ public interface cartMapper {
     int updateNumAndMoney(cart cart);
     //求商品总金额
     @Select("select sum(money) from f_cartdetail where cid=#{cid}")
-    int zongJinE(int cid);
+    double zongJinE(int cid);
     //按商品id删除商品
     @Delete("delete from  f_cartdetail where cid=#{cid} and gid=#{gid}")
     int deleteSP(cartandgoods cartandgoods);

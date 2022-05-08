@@ -21,7 +21,7 @@ public class cartController {
     //用户注册后后为用户创建一个购物车
     @PostMapping(value = "addNewUserCard")
     public int addNewUserCart(cart cart){return cartService.addNewUserCart(cart);}
-    //查询购物车中是否有商品
+    //查询购物车中是否有同类商品
     @PostMapping(value = "seegid")
     public List<cart> seegid(int cid){return cartService.seegid(cid);}
     //如果购物车有该商品 则商品数量加1
@@ -41,7 +41,7 @@ public class cartController {
     public int updateNumAndMoney(cart cart){return cartService.updateNumAndMoney(cart);}
     //求商品总金额
     @PostMapping(value = "zongJinE")
-    public int zongJinE(int cid){return cartService.zongJinE(cid);}
+    public double zongJinE(int cid){return cartService.zongJinE(cid);}
     //按商品id删除商品
     @PostMapping(value = "deleteSP")
     public int deleteSP(cartandgoods cartandgoods){return cartService.deleteSP(cartandgoods);}

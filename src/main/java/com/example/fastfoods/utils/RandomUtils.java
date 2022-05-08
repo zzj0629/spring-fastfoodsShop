@@ -5,7 +5,9 @@ import java.util.Calendar;
 import java.util.Random;
 import java.util.UUID;
 
+//随机数
 public class RandomUtils {
+    //生成激活码
     public static String createActive(){
         return getTime()+Integer.toHexString(new Random().nextInt(900)+100);
     }

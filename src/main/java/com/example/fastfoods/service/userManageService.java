@@ -8,9 +8,13 @@ import java.util.List;
 public interface userManageService {
     //用户管理的显示所有用户(不包括管理员)
     List<user> selectUserWhereUser();
-
-//    删除用户
+    //删除用户
     int  deleteUserById(int id);
-//条件查询用户
+    //条件查询用户
     List<user>  selectUserWhereCondition(@Param("username")String username,@Param("gender")String gender);
+
+    //按id查询用户
+    List<user> selectUserById(int id);
+    //修改用户信息
+    int updateUserById (user user);
 }

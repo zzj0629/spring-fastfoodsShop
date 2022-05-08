@@ -43,4 +43,10 @@ public class userManageController {
         }
         return userManageService.selectUserWhereCondition(username1,gender1);
     }
+    //按id查询用户
+    @PostMapping(value="selectUserById")
+    public List<user> selectUserById(int id){return userManageService.selectUserById(id);}
+    //修改用户信息
+    @PostMapping(value="updateUserById")
+    public int updateUserById (user user){return userManageService.updateUserById(user);}
 }

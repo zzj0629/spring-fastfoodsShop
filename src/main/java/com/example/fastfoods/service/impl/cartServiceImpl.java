@@ -31,7 +31,7 @@ public class cartServiceImpl implements cartService {
     //修改商品数量和小计
     public int updateNumAndMoney(cart cart){return cartMapper.updateNumAndMoney(cart);}
     //求商品总金额
-    public int zongJinE(int cid){return cartMapper.zongJinE(cid);}
+    public double zongJinE(int cid){return cartMapper.zongJinE(cid);}
     //按商品id删除商品
     public int deleteSP(cartandgoods cartandgoods){return cartMapper.deleteSP(cartandgoods);}
     //清空购物车
