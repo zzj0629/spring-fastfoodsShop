@@ -10,9 +10,13 @@ import java.util.List;
 @Mapper
 @Repository
 public interface commodityMapper {
-    //查看商品分类
+    //查看所有商品
     @Select("select * from f_goods")
     List<goods> selectAllGoods();
+
+    //查看商品分类
+    @Select("select * from f_goodstype")
+    List<GoodsType> selectGoodsType();
 
     //添加商品
     @Insert("INSERT INTO f_goods (name,price,pubdate,typeName,intro,picture,flag,star)" +
@@ -29,6 +33,6 @@ public interface commodityMapper {
     int updateGoods(goods goods);
 
     //条件查询商品
-    @Select("select * from f_goods where  name like concat('%',#{name},'%') and pubdate  like concat('%',#{pubdate},'%') ")
-    List<goods> selectGoods(@Param("name") String name, @Param("pubdate") String pubdate);
+    @Select("select * from f_goods where  name like concat('%',#{name},'%') and typeName like concat('%',#{typeName},'%') and pubdate like concat('%',#{pubdate},'%') ")
+    List<goods> selectGoods(@Param("name") String name, @Param("typeName") String typeName, @Param("pubdate") String pubdate);
 }

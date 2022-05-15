@@ -1,5 +1,6 @@
 package com.example.fastfoods.controller;
 
+import com.example.fastfoods.pojo.GoodsType;
 import com.example.fastfoods.pojo.goods;
 import com.example.fastfoods.service.commodityService;
 import org.apache.ibatis.annotations.Param;
@@ -7,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -21,6 +20,10 @@ public class commodityController {
     public List<goods> selectFoodsInformation() {
         return commodityService.selectAllGoods();
     }
+
+    //查看商品分类
+    @PostMapping(value = "selectGoodsType")
+    public List<GoodsType> selectGoodsType(){return commodityService.selectGoodsType();}
 
     //添加商品
     @PostMapping(value = "insertFoodsInformation")
@@ -59,7 +62,7 @@ public class commodityController {
 
     //条件查询商品
     @PostMapping(value = "selectGoods")
-    public List<goods> selectGoods(@Param("name") String name, @Param("pubdate") String pubdate) {
-        return commodityService.selectGoods(name, pubdate);
+    public List<goods> selectGoods(@Param("name") String name, @Param("typeName") String typeName, @Param("pubdate") String pubdate) {
+        return commodityService.selectGoods(name, typeName, pubdate);
     }
 }

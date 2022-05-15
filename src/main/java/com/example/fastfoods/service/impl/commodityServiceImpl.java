@@ -1,6 +1,7 @@
 package com.example.fastfoods.service.impl;
 
 import com.example.fastfoods.dao.commodityMapper;
+import com.example.fastfoods.pojo.GoodsType;
 import com.example.fastfoods.pojo.goods;
 import com.example.fastfoods.service.commodityService;
 import org.apache.ibatis.annotations.Param;
@@ -18,6 +19,9 @@ public class commodityServiceImpl implements commodityService {
     public List<goods> selectAllGoods() {
         return commodityMapper.selectAllGoods();
     }
+
+    //查看商品分类
+    public List<GoodsType> selectGoodsType(){return commodityMapper.selectGoodsType();}
 
     //添加商品
     @Override
@@ -39,7 +43,7 @@ public class commodityServiceImpl implements commodityService {
 
     //条件查询商品
     @Override
-    public List<goods> selectGoods(@Param("name") String name, @Param("pubdate") String pubdate) {
-        return commodityMapper.selectGoods(name, pubdate);
+    public List<goods> selectGoods(@Param("name") String name, @Param("typeName") String typeName, @Param("pubdate") String pubdate) {
+        return commodityMapper.selectGoods(name, typeName, pubdate);
     }
 }
